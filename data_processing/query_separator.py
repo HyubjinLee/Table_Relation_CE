@@ -16,5 +16,5 @@ for i in range(len(df)):
 
 single = pd.DataFrame(single)
 join = pd.DataFrame(join)
-single.to_csv("../data/single_query.csv", sep='#', index=False)
-join.to_csv("../data/join_query.csv", sep='#', index=False)
+single.to_csv("../data/query_single.csv", sep='#', index=False)
+join.to_csv("../data/query_join.csv", sep='#', index=False)
