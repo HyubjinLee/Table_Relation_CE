@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from hyperparameter import single_size
+from model.hyperparameter import single_size
 
 
 class tableModel(nn.Module):
