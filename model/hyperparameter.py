@@ -1,4 +1,5 @@
 learning_rate = 0.001
+epoch = 100
 
 table_num = 8
 column_num = 5

@@ -27,7 +27,8 @@ for i in range(len(df)):
     single[table][1].append([int(df["cardinality"][i]) / cardinality[table]])
 
 for table in tables:
+    print(len(single[table][0]))
     single[table][0] = np.array(single[table][0])
-    np.save("../data/vector_single/in" + str(tables.index(table)) + ".npy", single[table][0])
+    np.save("../data/vector_single/in_" + table + ".npy", single[table][0])
     single[table][1] = np.array(single[table][1])
-    np.save("../data/vector_single/out" + str(tables.index(table)) + ".npy", single[table][1])
+    np.save("../data/vector_single/out_" + table + ".npy", single[table][1])
