@@ -7,7 +7,7 @@ from model.hyperparameter import learning_rate, epoch
 from model.tableModel import tableModel
 from matplotlib import pyplot as plt
 
-for table in tables:
+for table in ["title t"]:
     input_data = torch.from_numpy(np.load("data/vector_single/in_" + table + ".npy")).float()
     output_data = torch.from_numpy(np.load("data/vector_single/out_" + table + ".npy")).float()
 
@@ -44,9 +44,9 @@ for table in tables:
 
         if val_loss < min_loss:
             min_loss = val_loss
-            torch.save(model.state_dict(), "model/save_single/" + table + str(epoch) + ".pth")
+            torch.save(model.state_dict(), "model/save_single/" + table + ".pth")
 
-    print(min_loss)
+    print(table, min_loss)
     plt.title(table)
     plt.plot(x, y)
     plt.show()
