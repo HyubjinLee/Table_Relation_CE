@@ -23,7 +23,7 @@ for i in range(1):
             print(t)
             for p in range(0, len(predicate), 3):
                 if predicate[p] in columns[t]:
-                    index = columns[t].index(predicate[p]) *
+                    index = columns[t].index(predicate[p])
         else:
             vector.extend([0 for _ in range(join_feature)])
 
