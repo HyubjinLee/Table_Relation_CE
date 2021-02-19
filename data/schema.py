@@ -20,4 +20,5 @@ cardinality = {"title t": 2528312,
                "cast_info ci": 36244344,
                "movie_info mi": 14835720,
                "movie_info_idx mi_idx": 1380035,
-               "movie_keyword mk": 4523930}
+               "movie_keyword mk": 4523930,
+               "join": 460456073}

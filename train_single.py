@@ -7,7 +7,7 @@ from model.hyperparameter import learning_rate, epoch
 from model.tableModel import tableModel
 from matplotlib import pyplot as plt
 
-for table in ["title t"]:
+for table in tables:
     input_data = torch.from_numpy(np.load("data/vector_single/in_" + table + ".npy")).float()
     output_data = torch.from_numpy(np.load("data/vector_single/out_" + table + ".npy")).float()
 
