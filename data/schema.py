@@ -1,11 +1,29 @@
 tables = ["title t", "movie_companies mc", "cast_info ci", "movie_info mi", "movie_info_idx mi_idx", "movie_keyword mk"]
 
-columns = {"title t": ["t.id", "t.kind_id", "t.production_year"],
-           "movie_companies mc": ["mc.id", "mc.company_id", "mc.movie_id", "mc.company_type_id"],
-           "cast_info ci": ["ci.id", "ci.movie_id", "ci.person_id", "ci.role_id"],
-           "movie_info mi": ["mi.id", "mi.movie_id", "mi.info_type_id"],
-           "movie_info_idx mi_idx": ["mi_idx.id", "mi_idx.movie_id", "mi_idx.info_type_id"],
-           "movie_keyword mk": ["mk.id", "mk.movie_id", "mk.keyword_id"]}
+table_dic = {"t": "title t",
+             "mc": "movie_companies mc",
+             "ci": "cast_info ci",
+             "mi": "movie_info mi",
+             "mi_idx": "movie_info_idx mi_idx",
+             "mk": "movie_keyword mk"}
+
+ban_tables = ["movie_info mi", "movie_info_idx mi_idx"]
+
+attributes = {"title t": ["t.id", "t.kind_id", "t.production_year"],
+              "movie_companies mc": ["mc.id", "mc.company_id", "mc.movie_id", "mc.company_type_id"],
+              "cast_info ci": ["ci.id", "ci.movie_id", "ci.person_id", "ci.role_id"],
+              "movie_info mi": ["mi.id", "mi.movie_id", "mi.info_type_id"],
+              "movie_info_idx mi_idx": ["mi_idx.id", "mi_idx.movie_id", "mi_idx.info_type_id"],
+              "movie_keyword mk": ["mk.id", "mk.movie_id", "mk.keyword_id"]}
+
+all_attributes = ["t.id", "t.kind_id", "t.production_year", "", "",
+                  "mc.id", "mc.company_id", "mc.movie_id", "mc.company_type_id", "",
+                  "ci.id", "ci.movie_id", "ci.person_id", "ci.role_id", "",
+                  "mi.id", "mi.movie_id", "mi.info_type_id", "", "",
+                  "mi_idx.id", "mi_idx.movie_id", "mi_idx.info_type_id", "", "",
+                  "mk.id", "mk.movie_id", "mk.keyword_id", "", "",
+                  "", "", "", "", "",
+                  "", "", "", "", ""]
 
 min_max = {'t.id': (1, 2528312), 't.kind_id': (1, 7), 't.production_year': (1880, 2019),
            'mc.id': (1, 2609129), 'mc.company_id': (1, 234997), 'mc.movie_id': (2, 2525745),

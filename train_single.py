@@ -12,6 +12,11 @@ for table in tables:
     output_data = torch.from_numpy(np.load("data/vector_single/out_" + table + ".npy")).float()
 
     data_size = int(len(input_data) * 0.9)
+    train_input = input_data[:data_size]
+    train_output = output_data[:data_size]
+    validation_input = input_data[data_size:]
+    validation_output = output_data[data_size:]
+
     batch_size = 100
     batch_num = data_size // batch_size
 
@@ -20,15 +25,15 @@ for table in tables:
     criterion = nn.MSELoss()
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
-    x = []
     c = 0
+    x = []
     y = []
     min_loss = 1
     loss = None
     for epoch in range(epoch):
         for b in range(batch_num):
-            inputs = input_data[b * batch_size:(b + 1) * batch_size]
-            outputs = output_data[b * batch_size:(b + 1) * batch_size]
+            inputs = train_input[b * batch_size:(b + 1) * batch_size]
+            outputs = train_output[b * batch_size:(b + 1) * batch_size]
 
             optimizer.zero_grad()
             predicts = model(inputs)
@@ -39,7 +44,7 @@ for table in tables:
 
         x.append(c)
         c += 1
-        val_loss = criterion(model(input_data[data_size:]), output_data[data_size:])
+        val_loss = criterion(model(validation_input), validation_output)
         y.append(val_loss)
 
         if val_loss < min_loss:

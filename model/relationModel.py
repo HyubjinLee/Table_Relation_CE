@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from model.hyperparameter import single_size
 
+
 class relationModel(nn.Module):
     def __init__(self):
         super(relationModel, self).__init__()

@@ -12,6 +12,9 @@ from matplotlib import pyplot as plt
 df = pd.read_csv("data/query_join.csv", sep='#')
 print(max(df["cardinality"]))
 
+a = [1,2,4,5]
+print(a[1:10])
+
 # model = tableModel().float()
 # model.load_state_dict(torch.load("model/save_single/title t.pth"))
 # input_data = torch.from_numpy(np.load("data/vector_single/in_title t.npy")).float()

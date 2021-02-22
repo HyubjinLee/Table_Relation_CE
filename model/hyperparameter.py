@@ -1,12 +1,13 @@
 learning_rate = 0.001
-epoch = 1000
+epoch = 500
 
 table_num = 8
-column_num = 5
+attribute_num = 5
 
 single_feature = 4
-single_size = column_num * single_feature
+single_size = attribute_num * single_feature
 
 join_feature = 3
-join_info = table_num * column_num
-join_size = (1 + column_num * join_feature) * table_num + join_info
+join_info = table_num * attribute_num
+join_vec = 1 + attribute_num * join_feature
+join_size = join_vec * table_num + join_info

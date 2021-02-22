@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from model.hyperparameter import single_size, single_feature
-from data.schema import tables, columns, min_max, cardinality
+from data.schema import tables, attributes, min_max, cardinality
 
 df = pd.read_csv("../data/query_single.csv", sep='#')
 
@@ -12,7 +12,7 @@ for i in range(len(df)):
 
     predicate = df["predicate"][i].split(',')
     for p in range(0, len(predicate), 3):  # 3 is predicate size: ['a', '>', '100']
-        index = columns[table].index(predicate[p]) * single_feature
+        index = attributes[table].index(predicate[p]) * single_feature
         if predicate[p + 1] == '>':
             vector[index] = 1
         elif predicate[p + 1] == '=':
