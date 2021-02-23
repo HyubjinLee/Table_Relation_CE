@@ -32,5 +32,3 @@ for table in tables:
     np.save("../data/vector_single/in_" + table + ".npy", single[table][0])
     single[table][1] = np.array(single[table][1])
     np.save("../data/vector_single/out_" + table + ".npy", single[table][1])
-
-
