@@ -1,13 +1,13 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from model.hyperparameter import single_size
+from model.hyperparameter import join_size
 
 
 class relationModel(nn.Module):
     def __init__(self):
         super(relationModel, self).__init__()
-        self.fc1 = nn.Linear(single_size, 256)
+        self.fc1 = nn.Linear(join_size, 256)
         self.fc2 = nn.Linear(256, 256)
         self.fc3 = nn.Linear(256, 1)
 

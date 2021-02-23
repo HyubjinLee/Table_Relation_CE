@@ -1,13 +1,6 @@
 tables = ["title t", "movie_companies mc", "cast_info ci", "movie_info mi", "movie_info_idx mi_idx", "movie_keyword mk"]
 
-table_dic = {"t": "title t",
-             "mc": "movie_companies mc",
-             "ci": "cast_info ci",
-             "mi": "movie_info mi",
-             "mi_idx": "movie_info_idx mi_idx",
-             "mk": "movie_keyword mk"}
-
-ban_tables = ["movie_info mi", "movie_info_idx mi_idx"]
+ban_tables = ["movie_info mi"]
 
 attributes = {"title t": ["t.id", "t.kind_id", "t.production_year"],
               "movie_companies mc": ["mc.id", "mc.company_id", "mc.movie_id", "mc.company_type_id"],
